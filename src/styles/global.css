@@ -1,0 +1,221 @@
+:root {
+  /* 8pt 间距系统 */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+
+  /* 字阶 */
+  --fs-xs: 14px;
+  --fs-sm: 15px;
+  --fs-base: 16px;
+  --fs-md: 18px;
+  --fs-lg: 22px;
+  --fs-xl: 28px;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* slate 中性色阶 */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  /* 主色：铜色，只用于关键操作与选中态 */
+  --copper-300: #d9a05b;
+  --copper-500: #b87333;
+  --copper-600: #955c25;
+  --danger-500: #dc2626;
+  --success-500: #16a34a;
+
+  --bg: var(--slate-100);
+  --surface: #ffffff;
+  --surface-2: var(--slate-50);
+  --border: var(--slate-200);
+  --text: var(--slate-900);
+  --text-muted: var(--slate-500);
+  --text-faint: var(--slate-400);
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.16);
+  --t-fast: 0.15s;
+  --t: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  font-size: var(--fs-xs);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  font-size: var(--fs-xs);
+  cursor: pointer;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  padding: var(--sp-2) var(--sp-4);
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
+}
+
+button:hover:not(:disabled) {
+  background: var(--slate-100);
+  border-color: var(--slate-300);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  color: var(--text-faint);
+  background: var(--surface-2);
+}
+
+button.primary {
+  background: var(--copper-500);
+  border-color: var(--copper-500);
+  color: #fff;
+}
+
+button.primary:hover:not(:disabled) {
+  background: var(--copper-600);
+  border-color: var(--copper-600);
+}
+
+button.ghost {
+  border-color: transparent;
+  background: transparent;
+}
+
+button.ghost:hover:not(:disabled) {
+  background: var(--slate-100);
+}
+
+button.danger {
+  color: var(--danger-500);
+  border-color: var(--slate-200);
+}
+
+input,
+select {
+  font-family: inherit;
+  font-size: var(--fs-xs);
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  width: 100%;
+  transition: border-color var(--t-fast);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--copper-500);
+}
+
+input[type='color'] {
+  padding: 2px;
+  height: 34px;
+}
+
+input[type='range'] {
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  font-weight: var(--fw-medium);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.danger-text {
+  color: var(--danger-500);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-7);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.empty-state .empty-icon {
+  width: 56px;
+  height: 56px;
+  border: 1.5px solid var(--slate-300);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--slate-400);
+}
+
+.empty-state h3 {
+  font-size: var(--fs-md);
+  color: var(--text);
+  font-weight: var(--fw-semibold);
+}
+
+/* 滚动条收敛 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--slate-300);
+  border-radius: var(--radius);
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

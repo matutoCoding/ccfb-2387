@@ -1,0 +1,135 @@
+.library-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.library-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-head h2 {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--sp-4);
+}
+
+.recipe-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.recipe-card.active {
+  border-color: var(--copper-500);
+  box-shadow: var(--shadow);
+}
+
+.recipe-thumb {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--slate-100);
+}
+
+.recipe-info {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.recipe-info h4 {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.recipe-actions {
+  display: flex;
+  gap: var(--sp-2);
+  padding: 0 var(--sp-4) var(--sp-4);
+}
+
+.recipe-actions button {
+  flex: 1;
+}
+
+.version-list {
+  overflow: hidden;
+}
+
+.version-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4);
+  border-bottom: 1px solid var(--border);
+}
+
+.version-row:last-child {
+  border-bottom: none;
+}
+
+.version-actions {
+  display: flex;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+.diff-panel {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.diff-panel h3 {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+}
+
+.diff-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--fs-xs);
+  padding: var(--sp-1) 0;
+}
+
+.diff-badge {
+  width: 52px;
+  text-align: center;
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-sm);
+  font-weight: var(--fw-medium);
+  flex-shrink: 0;
+}
+
+.diff-badge.add { background: #dcfce7; color: #15803d; }
+.diff-badge.remove { background: #fee2e2; color: #b91c1c; }
+.diff-badge.change { background: #fef3c7; color: #b45309; }
+
+.diff-path {
+  font-family: ui-monospace, monospace;
+  color: var(--slate-700);
+  min-width: 240px;
+}

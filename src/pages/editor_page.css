@@ -1,0 +1,79 @@
+.editor-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  height: 100%;
+  min-height: 0;
+}
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  flex-shrink: 0;
+}
+
+.recipe-name {
+  width: 220px;
+  font-weight: var(--fw-medium);
+}
+
+.seed-group {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.seed-group label {
+  white-space: nowrap;
+}
+
+.seed-input {
+  width: 110px;
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.editor-main {
+  flex: 1;
+  display: flex;
+  gap: var(--sp-4);
+  min-height: 0;
+}
+
+.canvas-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  min-width: 0;
+}
+
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  overflow-y: auto;
+}
+
+.broken-banner {
+  flex-shrink: 0;
+  padding: var(--sp-3) var(--sp-4);
+  border-color: var(--danger-500);
+}
+
+.broken-banner ul {
+  margin-top: var(--sp-2);
+  padding-left: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.eval-status {
+  flex-shrink: 0;
+  font-size: var(--fs-xs);
+}
